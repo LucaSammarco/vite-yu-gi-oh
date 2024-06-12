@@ -8,8 +8,10 @@ export default {
 </script>
 
 <template>
-    <div>
-        <h3>Search</h3>
+    <div class="search-contaier">
+        
+        <button type="menu"></button>
+        
     </div>
 </template>
 

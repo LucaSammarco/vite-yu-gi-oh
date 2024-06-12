@@ -1,37 +1,35 @@
 <script>
 
 import CharacterCard from './CharacterCard.vue'
-
+import { store } from '../store.js'
 
 export default {
     data() {
-        return {};
+        return {store};
     },
 
     components: {
-        CharacterCard
+        
     },
 
-    props: {
-        characters: {
-            type: Array,
-            required: true
-        }
-    }
+    
+    
 };
 </script>
 
 <template>
     
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Found {{ characters.length }} cards</h2>
+        <h2 class="text-center mb-4">Found {{ store.characters.length }} cards</h2>
         <div class="card-container">
-            <div class="card" v-for="(character, index) in characters" :key="character.id">
+            <div class="card" v-for="(character, index) in store.characters" :key="character.id">
                 <img :src="character.card_images[0].image_url" :alt="character.name" class="card-img-top">
+
                 <div class="card-body">
                     <h5 class="card-title"> {{ character.name }}</h5>
                     <p class="card-text"> {{ character.archetype }} </p>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -40,12 +38,16 @@ export default {
 
 
 <style lang="scss" scoped>
+
+@use '../styles/partial/variables' as *;
+
 .container {
     width: 100%;
    
-    margin-left: auto;
-    margin-right: auto;
     padding: 1rem;
+    background: white;
+    margin-top: 1rem;
+    
 }
 
 .card-container {
@@ -55,9 +57,9 @@ export default {
 }
 
 .card {
-    background-color: #D4A017;
+    background-color: $orange;
     border: none;
-    width: calc(100% / 5 - 20px);
+    width: calc(100% / 6 - 20px);
     margin: 10px;
     text-align: center;
 }
@@ -74,7 +76,7 @@ export default {
 }
 
 .card-text {
-    color: #ffffff;
+    color: black;
     text-transform: uppercase;
 }
 </style>

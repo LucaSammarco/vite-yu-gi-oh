@@ -86,6 +86,7 @@ export default {
 main {
     
     background-color: $orange;
+    height: 100%;
 }
 
 </style>

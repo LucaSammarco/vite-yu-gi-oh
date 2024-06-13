@@ -12,6 +12,17 @@ export default {
         
     },
 
+  computed: {
+    filteredCharacters() {
+        return store.characters.filter(card => {
+            if (store.selectedArchetypes && store.selectedArchetypes.archetype_name != "") {
+                return card.archetype === store.selectedArchetypes.archetype_name;
+            }
+            return true; 
+        });
+    }
+}
+
     
     
 };
@@ -20,10 +31,10 @@ export default {
 <template>
     
     <div class="container mt-5">
-        
-        <h2 class="text-center mb-4">Found {{ store.characters.length }} cards</h2>
+
+        <h2 class="text-center mb-4">Found {{ filteredCharacters.length }} cards</h2>
         <div class="card-container">
-            <div class="card" v-for="(character, index) in store.characters" :key="character.id">
+            <div class="card" v-for="(character, index) in filteredCharacters" :key="character.id">
 
                 <img :src="character.card_images[0].image_url" :alt="character.name" class="card-img-top">
 

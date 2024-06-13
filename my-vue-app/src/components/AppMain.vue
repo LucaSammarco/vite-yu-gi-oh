@@ -17,7 +17,7 @@ export default {
     methods:{
         getCharacters(){
 
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=42&offset=0')
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10000&offset=0')
                 .then((response) =>  {
                     // handle success
                     console.log(response.data.data);

@@ -58,14 +58,6 @@ export default {
                                     </li>
 
 
-
-                                    
-
-                                    <!-- <div v-for="(item, index) in store.archetypes" :key="index">
-                                        {{ item.archetype_name }}
-                                    </div> -->
-
-
                                 </ul>
 
 

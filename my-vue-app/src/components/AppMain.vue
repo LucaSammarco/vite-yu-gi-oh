@@ -34,7 +34,6 @@ export default {
         },
         info(){
             console.log('clicked')
-            console.log(this.store.searchedText)
         }
 
 

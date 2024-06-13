@@ -31,7 +31,12 @@ export default {
                     // always executed
                 });
 
+        },
+        info(){
+            console.log('clicked')
+            console.log(this.store.searchedText)
         }
+
 
        
     },
@@ -45,7 +50,7 @@ export default {
 <template>
     <main>
         
-        <CharacterSearch />
+        <CharacterSearch @searched="info"/>
         <CharacterList  />
     </main>
 </template>

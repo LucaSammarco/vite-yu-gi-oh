@@ -25,6 +25,25 @@ export default {
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="$emit('searched')">Button</button>
                                     </div>
                             </div>
+
+                            <div class="input-group mb-3">
+                                
+
+
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+
+
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    
+                                    <div v-for="(item, index) in store.archetypes" :key="index">
+                                        {{ item.archetype_name }}
+                                    </div>
+
+
+                                </ul>
+                            </div>
             
             </div>
         </div>

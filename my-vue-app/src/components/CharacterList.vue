@@ -23,6 +23,7 @@ export default {
         <h2 class="text-center mb-4">Found {{ store.characters.length }} cards</h2>
         <div class="card-container">
             <div class="card" v-for="(character, index) in store.characters" :key="character.id">
+                
                 <img :src="character.card_images[0].image_url" :alt="character.name" class="card-img-top">
 
                 <div class="card-body">

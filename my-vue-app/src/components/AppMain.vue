@@ -32,9 +32,31 @@ export default {
                 });
 
         },
+
+        getArchetype(){
+
+                axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+                    .then((response) =>  {
+                        // handle success
+                        console.log(response.data);
+                        this.store.archetypes = response.data;
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
+
+                },
+
+
+
+
         info(){
             console.log('clicked')
-            console.log(this.store.searchedText)
+            
         }
 
 
@@ -42,6 +64,7 @@ export default {
     },
     created(){
             this.getCharacters();
+            this.getArchetype();
         }
 };
 </script>

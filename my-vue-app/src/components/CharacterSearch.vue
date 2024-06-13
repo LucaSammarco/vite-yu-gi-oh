@@ -5,8 +5,19 @@ import { store } from '../store.js'
 export default {
     data() {
         return {
-            store
+            store,
+
+            
         };
+    },
+
+
+    methods: {
+
+        selectArchetype(item){
+            store.selectedArchetypes = item;
+            console.log(store.selectedArchetypes)
+        }
     }
 };
 </script>
@@ -37,12 +48,27 @@ export default {
                                     
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     
-                                    <div v-for="(item, index) in store.archetypes" :key="index">
+
+                                    <li> <a href="#" v-for="(item, index) in store.archetypes" :key="index" class=" dropdown-item" @click="selectArchetype(item)">  
+                                        
                                         {{ item.archetype_name }}
-                                    </div>
+
+                                    </a>
+
+                                    </li>
+
+
+
+                                    
+
+                                    <!-- <div v-for="(item, index) in store.archetypes" :key="index">
+                                        {{ item.archetype_name }}
+                                    </div> -->
 
 
                                 </ul>
+
+
                             </div>
             
             </div>
